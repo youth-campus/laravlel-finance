@@ -1,0 +1,148 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class EmailSMSTemplateSeeder extends Seeder {
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+	public function run() {
+		DB::table('email_sms_templates')->insert([
+			[
+				"name" => "Transfer Money",
+				"slug" => "TRANSFER_MONEY",
+				"subject" => "Transfer Money",
+				"email_body" => "<div>\r\n<div>Dear {{name}},</div>\r\n<div>You have received {{amount}} to {{account_number}} from {{sender_account_number}} on {{dateTime}}</div>\r\n</div>",
+				"sms_body" => "Dear {{name}}, You have received {{amount}} to {{account_number}} from {{sender_account_number}} on {{dateTime}}",
+				"notification_body" => "Dear {{name}}, You have received {{amount}} to {{account_number}} from {{sender_account_number}} on {{dateTime}}",
+				"shortcode" => "{{name}} {{account_number}} {{amount}} {{sender}} {{sender_account_number}} {{balance}} {{dateTime}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 0,
+			],
+			[
+				"name" => "Deposit Money",
+				"slug" => "DEPOSIT_MONEY",
+				"subject" => "Deposit Money",
+				"email_body" => "<div>\r\n<div>Dear {{name}},</div>\r\n<div>Your account has been credited with {{amount}} on {{dateTime}}</div>\r\n</div>",
+				"sms_body" => "Dear {{name}}, Your account has been credited with {{amount}} on {{dateTime}}",
+				"notification_body" => "Dear {{name}}, Your account has been credited with {{amount}} on {{dateTime}}",
+				"shortcode" => "{{name}} {{account_number}} {{amount}} {{dateTime}} {{balance}} {{depositMethod}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 0,
+			],
+			[
+				"name" => "Deposit Request Approved",
+				"slug" => "DEPOSIT_REQUEST_APPROVED",
+				"subject" => "Deposit Request Approved",
+				"email_body" => "<div>\r\n<div>Dear {{name}},</div>\r\n<div>Your deposit request has been approved. Your account {{account_number}} has been credited with {{amount}} on {{dateTime}}</div>\r\n</div>",
+				"sms_body" => "Dear {{name}}, Your deposit request has been approved. Your account {{account_number}} has been credited with {{amount}} on {{dateTime}}",
+				"notification_body" => "Dear {{name}}, Your deposit request has been approved. Your account {{account_number}} has been credited with {{amount}} on {{dateTime}}",
+				"shortcode" => "{{name}} {{account_number}} {{amount}} {{dateTime}} {{balance}} {{depositMethod}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 0,
+			],
+			[
+				"name" => "Loan Request Approved",
+				"slug" => "LOAN_REQUEST_APPROVED",
+				"subject" => "Loan Request Approved",
+				"email_body" => "<div>\r\n<div>Dear {{name}},</div>\r\n<div>Your loan request of {{amount}} has been approved on {{dateTime}}</div>\r\n</div>",
+				"sms_body" => "Dear {{name}}, Your loan request of {{amount}} has been approved on {{dateTime}}",
+				"notification_body" => "Dear {{name}}, Your loan request of {{amount}} has been approved on {{dateTime}}",
+				"shortcode" => "{{name}} {{amount}} {{dateTime}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 0,
+			],
+			[
+				"name" => "Withdraw Request Approved",
+				"slug" => "WITHDRAW_REQUEST_APPROVED",
+				"subject" => "Withdraw Request Approved",
+				"email_body" => "<div>\r\n<div>Dear {{name}},</div>\r\n<div>Your withdraw request has been approved. Your account has been debited with {{amount}} on {{dateTime}}</div>\r\n</div>",
+				"sms_body" => "Dear {{name}}, Your withdraw request has been approved. Your account has been debited with {{amount}} on {{dateTime}}",
+				"notification_body" => "Dear {{name}}, Your withdraw request has been approved. Your account has been debited with {{amount}} on {{dateTime}}",
+				"shortcode" => "{{name}} {{account_number}} {{amount}} {{withdrawMethod}} {{balance}} {{dateTime}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 0,
+			],
+			[
+				"name" => "Deposit Request Rejected",
+				"slug" => "DEPOSIT_REQUEST_REJECTED",
+				"subject" => "Deposit Request Rejected",
+				"email_body" => "<div>\r\n<div>Dear {{name}},</div>\r\n<div>Your deposit request of {{amount}} has been rejected.</div>\r\n<div>&nbsp;</div>\r\n<div>Amount:&nbsp;{{amount}}</div>\r\n<div>Deposit Method: {{depositMethod}}</div>\r\n</div>",
+				"sms_body" => "Dear {{name}}, Your deposit request of {{amount}} has been rejected.",
+				"notification_body" => "Dear {{name}}, Your deposit request of {{amount}} has been rejected.",
+				"shortcode" => "{{name}}  {{account_number}} {{amount}} {{depositMethod}} {{balance}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 0,
+			],
+			[
+				"name" => "Loan Request Rejected",
+				"slug" => "LOAN_REQUEST_REJECTED",
+				"subject" => "Loan Request Rejected",
+				"email_body" => "<div>\r\n<div>Dear {{name}},</div>\r\n<div>Your loan request of {{amount}} has been rejected on {{dateTime}}</div>\r\n</div>",
+				"sms_body" => "Dear {{name}}, Your loan request of {{amount}} has been rejected on {{dateTime}}",
+				"notification_body" => "Dear {{name}}, Your loan request of {{amount}} has been rejected on {{dateTime}}",
+				"shortcode" => "{{name}} {{amount}} {{dateTime}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 0,
+			],
+			[
+				"name" => "Withdraw Request Rejected",
+				"slug" => "WITHDRAW_REQUEST_REJECTED",
+				"subject" => "Withdraw Request Rejected",
+				"email_body" => "<div>\r\n<div>Dear {{name}}, Your withdraw request has been rejected. Your transferred amount {{amount}} has returned back to your account.</div>\r\n</div>",
+				"sms_body" => "Dear {{name}}, Your withdraw request has been rejected. Your transferred amount {{amount}} has returned back to your account.",
+				"notification_body" => "Dear {{name}}, Your withdraw request has been rejected. Your transferred amount {{amount}} has returned back to your account.",
+				"shortcode" => "{{name}} {{account_number}} {{amount}} {{withdrawMethod}} {{dateTime}} {{balance}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 0,
+			],
+			[
+				"name" => "Withdraw Money",
+				"slug" => "WITHDRAW_MONEY",
+				"subject" => "Withdraw Money",
+				"email_body" => "<div>\r\n<div>Dear {{name}},</div>\r\n<div>Your account has been debited with {{amount}} on {{dateTime}}</div>\r\n</div>",
+				"sms_body" => "Dear {{name}}, Your account has been debited with {{amount}} on {{dateTime}}",
+				"notification_body" => "Dear {{name}}, Your account has been debited with {{amount}} on {{dateTime}}",
+				"shortcode" => "{{name}} {{account_number}} {{amount}} {{dateTime}} {{withdrawMethod}} {{balance}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 0,
+			],
+			[
+				"name" => "Member Request Accepted",
+				"slug" => "MEMBER_REQUEST_ACCEPTED",
+				"subject" => "Member Request Accepted",
+				"email_body" => "<div>\r\n<div>Dear {{name}},</div>\r\n<div>Your member request has been accepted by authority on {{dateTime}}. You can now login to your account by using your email and password.</div>\r\n</div>",
+				"sms_body" => "",
+				"notification_body" => "",
+				"shortcode" => "{{name}} {{member_no}} {{dateTime}}",
+				"email_status" => 0,
+				"sms_status" => 0,
+				"notification_status" => 0,
+				"template_mode" => 1,
+			],
+		]);
+	}
+}
